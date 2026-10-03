@@ -1,0 +1,14 @@
+node_modules
+dist
+.venv
+__pycache__
+.env
+labs.db
+.env
+*.db
+*.secret
+.DS_Store
+__pycache__/
+.venv/
+node_modules/
+dist/

@@ -1,0 +1,20 @@
+# Render blueprint: New > Blueprint > pick this repo. Disks need a paid instance (not the free tier).
+services:
+  - type: web
+    name: lablens
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    disk:
+      name: lablens-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: HF_TOKEN
+        sync: false          # paste your Hugging Face token in the dashboard
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: LLM_MODEL
+        value: Qwen/Qwen2.5-7B-Instruct
+      - key: DB_PATH
+        value: /data/labs.db
